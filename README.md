@@ -1,4 +1,4 @@
-<div style="text-align: center">
+<div align="center">
   <img src="./static/images/etc/yoimiya.jpg" width="200">
 </div>
 
@@ -29,7 +29,9 @@ Table example for standard and character banner:
 
 <table>
   <tr>
-    <td style="font-weight: bold">Pulls</td>
+    <td>
+      <strong>Pulls</strong>
+    </td>
     <td>1</td>
     <td>...</td>
     <td>75</td>
@@ -38,7 +40,9 @@ Table example for standard and character banner:
     <td>90</td>
   </tr>
   <tr>
-    <td style="font-weight: bold">Rates</td>
+    <td>
+      <strong>Rates</strong>
+    </td>
     <td>94.3%</td>
     <td>...</td>
     <td>88.0875%</td>
@@ -57,7 +61,9 @@ Table example for standard and character banner:
 
 <table>
   <tr>
-    <td style="font-weight: bold">Pulls</td>
+    <td>
+      <strong>Pulls</strong>
+    </td>
     <td>1</td>
     <td>...</td>
     <td>75</td>
@@ -66,7 +72,9 @@ Table example for standard and character banner:
     <td>90</td>
   </tr>
   <tr>
-    <td style="font-weight: bold">Rates</td>
+    <td>
+      <strong>Rates</strong>
+    </td>
     <td>0.6%</td>
     <td>...</td>
     <td>6.8125%</td>
