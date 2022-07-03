@@ -10,7 +10,7 @@ This project is inspired from [Genshin-Impact-Wish-Simulator](https://github.com
 
 ## Invite Yoimiya
 
-You can invite Yoimiya to your server [here](https://discord.com/api/oauth2/authorize?client_id=990659611885453322&permissions=68608&scope=bot).
+You can invite Yoimiya to your server [here](https://discord.com/api/oauth2/authorize?client_id=990659611885453322&permissions=3072&scope=bot).
 
 ## Updates
 
