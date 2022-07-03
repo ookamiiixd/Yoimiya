@@ -1,0 +1,627 @@
+[
+  {
+    "patch": 1.0,
+    "name": "wanderlust-invocation-2",
+    "type": "character",
+    "standard": true,
+    "character": "qiqi",
+    "rateup": ["qiqi", "keqing", "diluc", "mona", "jean"]
+  },
+  {
+    "patch": 1.0,
+    "name": "ballad-in-goblets-1",
+    "type": "character",
+    "standard": false,
+    "character": "venti",
+    "rateup": ["xiangling", "fischl", "barbara"]
+  },
+  {
+    "patch": 1.0,
+    "name": "epitome-invocation-1",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["amos-bow", "aquila-favonia"],
+    "rateup": ["the-stringless", "favonius-lance", "the-bell", "the-widsith", "the-flute"]
+  },
+  {
+    "patch": 1.0,
+    "name": "sparkling-steps-1",
+    "type": "character",
+    "standard": false,
+    "character": "klee",
+    "rateup": ["sucrose", "xingqiu", "noelle"]
+  },
+  {
+    "patch": 1.0,
+    "name": "epitome-invocation-2",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["lost-prayer-to-the-sacred-winds", "wolf_s-gravestone"],
+    "rateup": [
+      "sacrificial-greatsword",
+      "sacrificial-sword",
+      "sacrificial-fragments",
+      "dragon_s-bane",
+      "sacrificial-bow"
+    ]
+  },
+  {
+    "patch": 1.1,
+    "name": "farewell-of-snezhnaya-1",
+    "type": "character",
+    "standard": false,
+    "character": "tartaglia",
+    "rateup": ["beidou", "ninggnang", "diona"]
+  },
+  {
+    "patch": 1.1,
+    "name": "epitome-invocation-3",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["skyward-harp", "memory-of-dust"],
+    "rateup": ["rust", "favonius-lance", "rainslasher", "the-flute", "eye-of-perception"]
+  },
+  {
+    "patch": 1.1,
+    "name": "gentry-of-hermitage-1",
+    "type": "character",
+    "standard": false,
+    "character": "zhongli",
+    "rateup": ["razor", "xinyan", "chongyun"]
+  },
+  {
+    "patch": 1.1,
+    "name": "epitome-invocation-4",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["vortex-vanquisher", "the-unforged"],
+    "rateup": ["favonius-warbow", "the-bell", "favonius-codex", "dragon_s-bane", "lion_s-roar"]
+  },
+  {
+    "patch": 1.2,
+    "name": "secretum-secretorum-1",
+    "type": "character",
+    "standard": false,
+    "character": "albedo",
+    "rateup": ["bennett", "sucrose", "fischl"]
+  },
+  {
+    "patch": 1.2,
+    "name": "epitome-invocation-5",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["summit-shaper", "skyward-atlas"],
+    "rateup": [
+      "the-stringless",
+      "favonius-lance",
+      "favonius-greatsword",
+      "lion_s-roar",
+      "the-widsith"
+    ]
+  },
+  {
+    "patch": 1.2,
+    "name": "adrift-in-the-harbor-1",
+    "type": "character",
+    "standard": false,
+    "character": "ganyu",
+    "rateup": ["beidou", "xinyan", "xingqiu"]
+  },
+  {
+    "patch": 1.2,
+    "name": "epitome-invocation-6",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["amos-bow", "skyward-pride"],
+    "rateup": [
+      "favonius-warbow",
+      "the-bell",
+      "eye-of-perception",
+      "dragon_s-bane",
+      "sacrificial-sword"
+    ]
+  },
+  {
+    "patch": 1.3,
+    "name": "invitation-to-mundane-life-1",
+    "type": "character",
+    "standard": false,
+    "character": "xiao",
+    "rateup": ["xinyan", "beidou", "diona"]
+  },
+  {
+    "patch": 1.3,
+    "name": "epitome-invocation-7",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["primordial-jade-winged-spear", "primordial-jade-cutter"],
+    "rateup": ["rust", "the-flute", "favonius-lance", "sacrificial-greatsword", "eye-of-perception"]
+  },
+  {
+    "patch": 1.3,
+    "name": "dance-of-lantern-1",
+    "type": "character",
+    "standard": false,
+    "character": "keqing",
+    "rateup": ["barbara", "bennett", "ningguang"]
+  },
+  {
+    "patch": 1.3,
+    "name": "moment-of-bloom-1",
+    "type": "character",
+    "standard": false,
+    "character": "hu-tao",
+    "rateup": ["xiangling", "chongyun", "xingqiu"]
+  },
+  {
+    "patch": 1.3,
+    "name": "epitome-invocation-8",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["wolf_s-gravestone", "staff-of-homa"],
+    "rateup": ["lion_s-roar", "lithic-blade", "lithic-spear", "sacrificial-bow", "the-widsith"]
+  },
+  {
+    "patch": 1.4,
+    "name": "ballad-in-goblet-2",
+    "type": "character",
+    "standard": false,
+    "character": "venti",
+    "rateup": ["razor", "sucrose", "noelle"]
+  },
+  {
+    "patch": 1.4,
+    "name": "epitome-invocation-9",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["elegy-for-the-end", "skyward-blade"],
+    "rateup": [
+      "favonius-warbow",
+      "wine-and-song",
+      "dragon_s-bane",
+      "favonius-greatsword",
+      "the-alley-flash"
+    ]
+  },
+  {
+    "patch": 1.4,
+    "name": "farewell-of-snezhnaya-2",
+    "type": "character",
+    "standard": false,
+    "character": "tartaglia",
+    "rateup": ["barbara", "fischl", "rosaria"]
+  },
+  {
+    "patch": 1.4,
+    "name": "epitome-invocation-10",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["skyward-harp", "lost-prayer-to-the-sacred-winds"],
+    "rateup": [
+      "alley-hunter",
+      "favonius-codex",
+      "sacrificial-greatsword",
+      "favonius-lance",
+      "favonius-sword"
+    ]
+  },
+  {
+    "patch": 1.5,
+    "name": "gentry-of-hermitage-2",
+    "type": "character",
+    "standard": false,
+    "character": "zhongli",
+    "rateup": ["yanfei", "noelle", "diona"]
+  },
+  {
+    "patch": 1.5,
+    "name": "epitome-invocation-11",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["summit-shaper", "memory-of-dust"],
+    "rateup": ["sacrificial-bow", "eye-of-perception", "lithic-blade", "lithic-spear", "the-flute"]
+  },
+  {
+    "patch": 1.5,
+    "name": "born-of-ocean-swell-1",
+    "type": "character",
+    "standard": false,
+    "character": "eula",
+    "rateup": ["beidou", "xinyan", "xingqiu"]
+  },
+  {
+    "patch": 1.5,
+    "name": "epitome-invocation-12",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["song-of-broken-pines", "aquila-favonia"],
+    "rateup": ["rust", "sacrificial-fragments", "rainslasher", "dragon_s-bane", "sacrificial-sword"]
+  },
+  {
+    "patch": 1.6,
+    "name": "sparkling-steps-2",
+    "type": "character",
+    "standard": false,
+    "character": "klee",
+    "rateup": ["fischl", "barbara", "sucrose"]
+  },
+  {
+    "patch": 1.6,
+    "name": "epitome-invocation-13",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["lost-prayer-to-the-sacred-winds", "skyward-pride"],
+    "rateup": ["mitternachts-waltz", "the-widsith", "the-bell", "favonius-lance", "lion_s-roar"]
+  },
+  {
+    "patch": 1.6,
+    "name": "leaves-in-the-wind-1",
+    "type": "character",
+    "standard": false,
+    "character": "kaedehara-kazuha",
+    "rateup": ["rosaria", "bennett", "razor"]
+  },
+  {
+    "patch": 1.6,
+    "name": "epitome-invocation-14",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["freedom-sworn", "skyward-atlas"],
+    "rateup": [
+      "alley-hunter",
+      "wine-and-song",
+      "favonius-greatsword",
+      "dragon_s-bane",
+      "the-alley-flash"
+    ]
+  },
+  {
+    "patch": 2.0,
+    "name": "the-heron_s-court-1",
+    "typoName": "the-heron_s-court-2",
+    "type": "character",
+    "standard": false,
+    "character": "kamisato-ayaka",
+    "rateup": ["yanfei", "chongyun", "ningguang"]
+  },
+  {
+    "patch": 2.0,
+    "name": "epitome-invocation-15",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["mistsplitter-reforged", "skyward-spine"],
+    "rateup": [
+      "the-stringless",
+      "favonius-codex",
+      "sacrificial-greatsword",
+      "favonius-lance",
+      "favonius-sword"
+    ]
+  },
+  {
+    "patch": 2.0,
+    "name": "tapestry-of-golden-flames-1",
+    "type": "character",
+    "standard": false,
+    "character": "yoimiya",
+    "rateup": ["sayu", "xinyan", "diona"]
+  },
+  {
+    "patch": 2.0,
+    "name": "epitome-invocation-16",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["thundering-pulse", "skyward-blade"],
+    "rateup": [
+      "sacrificial-sword",
+      "sacrificial-fragments",
+      "favonius-warbow",
+      "rainslasher",
+      "dragon_s-bane"
+    ]
+  },
+  {
+    "patch": 2.1,
+    "name": "reign-of-serenity-1",
+    "type": "character",
+    "standard": false,
+    "character": "raiden-shogun",
+    "rateup": ["xiangling", "sucrose", "kujou-sara"]
+  },
+  {
+    "patch": 2.1,
+    "name": "epitome-invocation-17",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["engulfing-lightning", "the-unforged"],
+    "rateup": ["the-bell", "sacrificial-bow", "favonius-lance", "the-widsith", "lion_s-roar"]
+  },
+  {
+    "patch": 2.1,
+    "name": "drifting-luminescence-1",
+    "type": "character",
+    "standard": false,
+    "character": "sangonomiya-kokomi",
+    "rateup": ["rosaria", "xingqiu", "beidou"]
+  },
+  {
+    "patch": 2.1,
+    "name": "epitome-invocation-18",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["primordial-jade-cutter", "everlasting-moonglow"],
+    "rateup": [
+      "dragon_s-bane",
+      "the-stringless",
+      "favonius-codex",
+      "favonius-greatsword",
+      "the-flute"
+    ]
+  },
+  {
+    "patch": 2.2,
+    "name": "farewell-of-snezhnaya-3",
+    "type": "character",
+    "standard": false,
+    "character": "tartaglia",
+    "rateup": ["yanfei", "chongyun", "ningguang"]
+  },
+  {
+    "patch": 2.2,
+    "name": "epitome-invocation-19",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["polar-star", "memory-of-dust"],
+    "rateup": ["favonius-lance", "rust", "eye-of-perception", "akuoumaru", "favonius-sword"]
+  },
+  {
+    "patch": 2.2,
+    "name": "moment-of-bloom-2",
+    "type": "character",
+    "standard": false,
+    "character": "hu-tao",
+    "rateup": ["thoma", "diona", "sayu"]
+  },
+  {
+    "patch": 2.2,
+    "name": "epitome-invocation-20",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["elegy-for-the-end", "staff-of-homa"],
+    "rateup": [
+      "wavebreaker_s-fin",
+      "mouun_s-moon",
+      "the-widsith",
+      "rainslasher",
+      "sacrificial-sword"
+    ]
+  },
+  {
+    "patch": 2.3,
+    "name": "secretum-secretorum-2",
+    "type": "character",
+    "standard": false,
+    "character": "albedo",
+    "rateup": ["bennett", "noelle", "rosaria"]
+  },
+  {
+    "patch": 2.3,
+    "name": "born-of-ocean-swell-2",
+    "type": "character",
+    "standard": false,
+    "character": "eula",
+    "rateup": ["bennett", "noelle", "rosaria"]
+  },
+  {
+    "patch": 2.3,
+    "name": "epitome-invocation-21",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["freedom-sworn", "song-of-broken-pines"],
+    "rateup": [
+      "lion_s-roar",
+      "alley-hunter",
+      "wine-and-song",
+      "dragon_s-bane",
+      "sacrificial-greatsword"
+    ]
+  },
+  {
+    "patch": 2.3,
+    "name": "oni_s-royale-1",
+    "type": "character",
+    "standard": false,
+    "character": "arataki-itto",
+    "rateup": ["barbara", "xiangling", "gorou"]
+  },
+  {
+    "patch": 2.3,
+    "name": "epitome-invocation-22",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["skyward-harp", "redhorn-stonethresher"],
+    "rateup": [
+      "the-alley-flash",
+      "mitternachts-waltz",
+      "sacrificial-fragments",
+      "favonius-lance",
+      "the-bell"
+    ]
+  },
+  {
+    "patch": 2.4,
+    "name": "the-transcendent-one-returns-1",
+    "type": "character",
+    "standard": false,
+    "character": "shenhe",
+    "rateup": ["yun-jin", "ningguang", "chongyun"]
+  },
+  {
+    "patch": 2.4,
+    "name": "invitation-to-mundane-life-2",
+    "type": "character",
+    "standard": false,
+    "character": "xiao",
+    "rateup": ["yun-jin", "ningguang", "chongyun"]
+  },
+  {
+    "patch": 2.4,
+    "name": "epitome-invocation-23",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["calamity-queller", "primordial-jade-winged-spear"],
+    "rateup": ["favonius-warbow", "the-widsith", "favonius-greatsword", "lithic-spear", "the-flute"]
+  },
+  {
+    "patch": 2.4,
+    "name": "gentry-of-hermitage-3",
+    "type": "character",
+    "standard": false,
+    "character": "zhongli",
+    "rateup": ["xingqiu", "yanfei", "beidou"]
+  },
+  {
+    "patch": 2.4,
+    "name": "adrift-in-the-harbor-2",
+    "type": "character",
+    "standard": false,
+    "character": "ganyu",
+    "rateup": ["xingqiu", "yanfei", "beidou"]
+  },
+  {
+    "patch": 2.4,
+    "name": "epitome-invocation-24",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["vortex-vanquisher", "amos-bow"],
+    "rateup": [
+      "sacrificial-bow",
+      "lithic-blade",
+      "favonius-codex",
+      "favonius-sword",
+      "dragon_s-bane"
+    ]
+  },
+  {
+    "patch": 2.5,
+    "name": "everbloom-violet-1",
+    "type": "character",
+    "standard": false,
+    "character": "yae-miko",
+    "rateup": ["thoma", "diona", "fischl"]
+  },
+  {
+    "patch": 2.5,
+    "name": "epitome-invocation-25",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["kagura_s-verity", "primordial-jade-cutter"],
+    "rateup": [
+      "rainslasher",
+      "eye-of-perception",
+      "the-stringless",
+      "wavebreaker_s-fin",
+      "sacrificial-sword"
+    ]
+  },
+  {
+    "patch": 2.5,
+    "name": "reign-of-serenity-2",
+    "type": "character",
+    "standard": false,
+    "character": "raiden-shogun",
+    "rateup": ["bennett", "kujou-sara", "xinyan"]
+  },
+  {
+    "patch": 2.5,
+    "name": "drifting-luminescence-2",
+    "type": "character",
+    "standard": false,
+    "character": "sagonomiya-kokomi",
+    "rateup": ["bennett", "kujou-sara", "xinyan"]
+  },
+  {
+    "patch": 2.5,
+    "name": "epitome-invocation-26",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["engulfing-lightning", "everlasting-moonglow"],
+    "rateup": [
+      "akuoumaru",
+      "favonius-lance",
+      "lion_s-roar",
+      "mouun_s-moon",
+      "sacrificial-fragments"
+    ]
+  },
+  {
+    "patch": 2.6,
+    "name": "azure-excursion-1",
+    "type": "character",
+    "standard": false,
+    "character": "kamisato-ayato",
+    "rateup": ["sucrose", "xiangling", "yun-jin"]
+  },
+  {
+    "patch": 2.6,
+    "name": "ballad-in-goblets-3",
+    "type": "character",
+    "standard": false,
+    "character": "venti",
+    "rateup": ["sucrose", "xiangling", "yun-jin"]
+  },
+  {
+    "patch": 2.6,
+    "name": "epitome-invocation-27",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["elegy-for-the-end", "haran-geppaku-futsu"],
+    "rateup": ["the-flute", "rust", "dragon_s-bane", "the-widsith", "sacrificial-greatsword"]
+  },
+  {
+    "patch": 2.6,
+    "name": "the-heron_s-court-2",
+    "type": "character",
+    "standard": false,
+    "character": "kamisato-ayaka",
+    "rateup": ["razor", "rosaria", "sayu"]
+  },
+  {
+    "patch": 2.6,
+    "name": "epitome-invocation-28",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["mistsplitter-reforged", "the-unforged"],
+    "rateup": ["favonius-codex", "favonius-lance", "favonius-warbow", "favonius-sword", "the-bell"]
+  },
+  {
+    "patch": 2.7,
+    "name": "discerner-of-enigmas-1",
+    "type": "character",
+    "standard": false,
+    "character": "yelan",
+    "rateup": ["yanfei", "barbara", "noelle"]
+  },
+  {
+    "patch": 2.7,
+    "name": "invitation-to-mundane-life-3",
+    "type": "character",
+    "standard": false,
+    "character": "xiao",
+    "rateup": ["yanfei", "barbara", "noelle"]
+  },
+  {
+    "patch": 2.7,
+    "name": "epitome-invocation-29",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["aqua-simulacra", "primordial-jade-winged-spear"],
+    "rateup": [
+      "lithic-spear",
+      "sacrificial-bow",
+      "sacrificial-sword",
+      "eye-of-perception",
+      "favonius-greatsword"
+    ]
+  }
+]

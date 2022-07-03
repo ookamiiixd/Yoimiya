@@ -1,0 +1,13 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "semi": false,
+  "singleQuote": true,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderCaseInsensitive": true,
+  "importOrder": ["^dotenv.*$", "<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"]
+}
