@@ -1,5 +1,6 @@
-import { MessageAttachment, MessageEmbed } from 'discord.js'
+import { CommandInteraction, MessageAttachment, MessageEmbed } from 'discord.js'
 import type { SimpleCommandMessage } from 'discordx'
+import { Slash, SlashChoice, SlashOption } from 'discordx'
 import { Guard } from 'discordx'
 import { Discord, SimpleCommand, SimpleCommandOption, SimpleCommandOptionType } from 'discordx'
 
@@ -38,8 +39,10 @@ class GachaCommand {
     })
     wishedWeaponId: string | undefined = undefined,
 
-    command: SimpleCommandMessage
+    command: SimpleCommandMessage | CommandInteraction
   ) {
+    const isSlash = command instanceof CommandInteraction
+
     // Get banner
     const banner = bannerId
       ? banners.get(bannerId)
@@ -56,7 +59,7 @@ class GachaCommand {
       return sendUsageSyntax(command)
     }
 
-    const userId = command.message.author.id
+    const userId = isSlash ? command.user.id : command.message.author.id
     const userPity = await CharacterGacha.getPity(
       userId,
       banner.standard ? 'standard' : banner.type,
@@ -87,7 +90,9 @@ class GachaCommand {
     embed
       .setColor(EMBED_COLOR)
       .setImage('attachment://result.webp')
-      .setTitle(`${command.message.author.username}'s Pull Result`)
+      .setTitle(
+        `${isSlash ? command.user.username : command.message.author.username}'s Pull Result`
+      )
 
       .addField('Selected Banner', `${normalizeName(banner.name)} (${banner.name})`)
       .addField(
@@ -117,7 +122,43 @@ class GachaCommand {
           (banner.type === 'weapon' ? `**Wished Weapon**: ${userPity.WISHED_WEAPON ?? ''}` : '')
       )
 
-    command.message.reply({ embeds: [embed], files: [attachment] })
+    const message = { embeds: [embed], files: [attachment] }
+
+    if (isSlash) {
+      return command.reply(message)
+    }
+
+    command.message.channel.send(message)
+  }
+
+  @Slash('gacha', { description: 'Do wish simulation' })
+  @Guard(rateLimitGuardFn(10))
+  slashGacha(
+    @SlashChoice('single', 'multi')
+    @SlashOption('mode', {
+      required: false,
+      type: 'STRING',
+      description: 'Pull mode (Optional)',
+    })
+    mode: PullMode | undefined,
+
+    @SlashOption('banner-id', {
+      required: false,
+      type: 'STRING',
+      description: 'Banner id (Optional)',
+    })
+    bannerId: string | undefined,
+
+    @SlashOption('wished-weapon-id', {
+      required: false,
+      type: 'STRING',
+      description: 'Wished weapon id for the fate point system (Required for weapon banner)',
+    })
+    wishedWeaponId: string | undefined,
+
+    interaction: CommandInteraction
+  ) {
+    this.gacha(mode, bannerId, wishedWeaponId, interaction)
   }
 }
 

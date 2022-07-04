@@ -1,4 +1,4 @@
-import { MessageEmbed } from 'discord.js'
+import { CommandInteraction, MessageEmbed } from 'discord.js'
 import type { SimpleCommandMessage } from 'discordx'
 import { SimpleCommandOptionType } from 'discordx'
 
@@ -27,7 +27,11 @@ export function normalizeName(name: string) {
   return capitalize(name.replace(/\d/g, '').replace(/_/g, "'").replace(/-/g, ' ').trim(), true)
 }
 
-export async function sendUsageSyntax(command: SimpleCommandMessage) {
+export async function sendUsageSyntax(command: SimpleCommandMessage | CommandInteraction) {
+  if (command instanceof CommandInteraction) {
+    return command.reply('Invalid syntax. Type `<prefix><command> help` to show command usage.')
+  }
+
   const embed = new MessageEmbed()
 
   embed

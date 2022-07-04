@@ -1,6 +1,7 @@
 import { RateLimit, TIME_UNIT } from '@discordx/utilities'
+import type { CommandInteraction } from 'discord.js'
 import { MessageAttachment, MessageEmbed } from 'discord.js'
-import type { SimpleCommandMessage } from 'discordx'
+import { SimpleCommandMessage, Slash } from 'discordx'
 import { Discord, Guard, SimpleCommand } from 'discordx'
 import { readFileSync } from 'fs'
 
@@ -46,10 +47,10 @@ export const rateLimitGuardFn = (cooldownMs: number) =>
 @Discord()
 class Command {
   @SimpleCommand('help', {
-    description: 'Get bot usage information',
+    description: 'Show bot usage information',
   })
   @Guard(rateLimitGuardFn(300))
-  help(command: SimpleCommandMessage) {
+  help(command: SimpleCommandMessage | CommandInteraction) {
     const embed = new MessageEmbed()
     const attachment = new MessageAttachment(
       readFileSync('./static/images/etc/yoimiya.jpg'),
@@ -62,13 +63,13 @@ class Command {
       .setThumbnail('attachment://yoimiya.jpg')
       .setTitle("Yoimiya's Usage")
       .setDescription(
-        'To show help for specific command, type `<prefix><command> help`. This only available to commands that accept an argument on it.'
+        'To show help for specific command, type `<prefix><command> help`. This only available to prefixed commands that accept an argument on it and not available on slash commands.'
       )
       .addFields([
         {
           name: 'Usage',
           value:
-            "To use Yoimiya's commands, type `<prefix><command-name> ...<args>`. Argument(s) is separated by single whitespace.",
+            "To use Yoimiya's commands, you can either use Yoimiya's slash commands or use prefixed commands by typing `<prefix><command-name> ...<args>`. Argument(s) is separated by single whitespace.",
         },
         {
           name: 'Prefix',
@@ -82,7 +83,19 @@ class Command {
         },
       ])
 
-    command.message.reply({ embeds: [embed], files: [attachment] })
+    const message = { embeds: [embed], files: [attachment] }
+
+    if (command instanceof SimpleCommandMessage) {
+      return command.message.channel.send(message)
+    }
+
+    command.reply(message)
+  }
+
+  @Slash('help', { description: 'Show bot usage information' })
+  @Guard(rateLimitGuardFn(300))
+  slashHelp(interaction: CommandInteraction) {
+    this.help(interaction)
   }
 }
 

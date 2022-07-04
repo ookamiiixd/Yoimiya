@@ -1,6 +1,8 @@
 import { Pagination, PaginationType } from '@discordx/pagination'
-import { MessageAttachment, MessageEmbed } from 'discord.js'
+import { CommandInteraction, MessageAttachment, MessageEmbed } from 'discord.js'
 import type { SimpleCommandMessage } from 'discordx'
+import { SlashOption } from 'discordx'
+import { Slash, SlashGroup } from 'discordx'
 import { Guard } from 'discordx'
 import { SimpleCommandOption, SimpleCommandOptionType } from 'discordx'
 import { Discord, SimpleCommand } from 'discordx'
@@ -13,10 +15,11 @@ import { EMBED_COLOR } from './command'
 import { rateLimitGuardFn } from './command'
 
 @Discord()
+@SlashGroup({ name: 'banner', description: 'Execute banner related command' })
 class BannerCommand {
-  @SimpleCommand('banner list', { description: 'Get available banner list' })
+  @SimpleCommand('banner list', { description: 'Show list of available banners' })
   @Guard(rateLimitGuardFn(90))
-  list(command: SimpleCommandMessage) {
+  list(command: SimpleCommandMessage | CommandInteraction) {
     const grouped: Banner[][] = []
     const list = Array.from(banners.values())
 
@@ -39,19 +42,30 @@ class BannerCommand {
     )
 
     // Send paginated result
-    new Pagination(command.message, embed, {
-      type: PaginationType.Button,
-      time: 60_000 * 5, // 5 minutes timeout
-      start: { emoji: '⏪', label: '' },
-      end: { emoji: '⏩', label: '' },
-      previous: { emoji: '◀️', label: '' },
-      next: { emoji: '▶️', label: '' },
-    }).send()
+    new Pagination(
+      command instanceof CommandInteraction ? command : command.message.channel,
+      embed,
+      {
+        type: PaginationType.Button,
+        time: 60_000 * 5, // 5 minutes timeout
+        start: { emoji: '⏪', label: '' },
+        end: { emoji: '⏩', label: '' },
+        previous: { emoji: '◀️', label: '' },
+        next: { emoji: '▶️', label: '' },
+      }
+    ).send()
+  }
+
+  @Slash('list', { description: 'Show list of available banners' })
+  @SlashGroup('banner')
+  @Guard(rateLimitGuardFn(90))
+  slashList(interaction: CommandInteraction) {
+    this.list(interaction)
   }
 
   @SimpleCommand('banner info', {
     aliases: ['banner detail', 'banner details'],
-    description: 'Get banner information',
+    description: 'Show banner information',
   })
   @Guard(rateLimitGuardFn(15))
   info(
@@ -62,7 +76,7 @@ class BannerCommand {
     })
     bannerId: string | undefined = '',
 
-    command: SimpleCommandMessage
+    command: SimpleCommandMessage | CommandInteraction
   ) {
     const banner = banners.get(bannerId)
 
@@ -113,7 +127,28 @@ class BannerCommand {
         },
       ])
 
-    command.message.reply({ embeds: [embed], files: [attachment] })
+    const message = { embeds: [embed], files: [attachment] }
+
+    if (command instanceof CommandInteraction) {
+      return command.reply(message)
+    }
+
+    command.message.channel.send(message)
+  }
+
+  @Slash('info', { description: 'Show banner information' })
+  @SlashGroup('banner')
+  @Guard(rateLimitGuardFn(15))
+  slashInfo(
+    @SlashOption('banner-id', {
+      type: 'STRING',
+      description: 'Banner id (Required)',
+    })
+    bannerId: string | undefined,
+
+    interaction: CommandInteraction
+  ) {
+    this.info(bannerId, interaction)
   }
 }
 

@@ -1,5 +1,7 @@
-import { MessageEmbed } from 'discord.js'
+import { CommandInteraction, MessageEmbed } from 'discord.js'
 import type { SimpleCommandMessage } from 'discordx'
+import { SlashChoice, SlashOption } from 'discordx'
+import { Slash, SlashGroup } from 'discordx'
 import { Guard } from 'discordx'
 import { Discord, SimpleCommand, SimpleCommandOption, SimpleCommandOptionType } from 'discordx'
 import invariant from 'tiny-invariant'
@@ -17,14 +19,17 @@ import { rateLimitGuardFn } from './command'
 const bannerType = ['standard', 'character', 'weapon']
 
 @Discord()
+@SlashGroup({ name: 'pity', description: 'Execute pity related command' })
 class PityCommand {
   @SimpleCommand('pity info', {
     aliases: ['detail', 'details'],
-    description: 'Get pity information',
+    description: 'Show pity information',
   })
   @Guard(rateLimitGuardFn(30))
-  async info(command: SimpleCommandMessage) {
-    const userId = command.message.author.id
+  async info(command: SimpleCommandMessage | CommandInteraction) {
+    const isSlash = command instanceof CommandInteraction
+
+    const userId = isSlash ? command.user.id : command.message.author.id
     // Get pity
     const [standardPity, characterPity, weaponPity] = await Promise.all([
       CharacterGacha.getPity(userId, 'standard'),
@@ -70,7 +75,7 @@ class PityCommand {
     // Build embed
     embed
       .setColor(EMBED_COLOR)
-      .setTitle(`${command.message.author.username}'s Pity Info`)
+      .setTitle(`${isSlash ? command.user.username : command.message.author.username}'s Pity Info`)
       .addFields([
         {
           name: 'Standard Banner',
@@ -86,28 +91,41 @@ class PityCommand {
         },
       ])
 
-    command.message.reply({ embeds: [embed] })
+    const message = { embeds: [embed] }
+
+    if (isSlash) {
+      return command.reply(message)
+    }
+
+    command.message.channel.send(message)
   }
 
-  @SimpleCommand('pity reset', {
-    description: 'Reset pity data',
-  })
+  @Slash('info', { description: 'Show pity information' })
+  @SlashGroup('pity')
+  @Guard(rateLimitGuardFn(30))
+  slashInfo(command: CommandInteraction) {
+    this.info(command)
+  }
+
+  @SimpleCommand('pity reset', { description: 'Reset pity data' })
   @Guard(rateLimitGuardFn(30))
   async reset(
     @SimpleCommandOption('banner-type', {
       type: SimpleCommandOptionType.String,
       description:
-        'Which banner the pity should be reset to (Optional). Valid value is `standard`, `character`, `weapon` and `all`. If set to `all`, this will reset pity on all banner type. Default: `all`.',
+        'Which banner type the pity should be reset to (Optional). Valid value is `standard`, `character`, `weapon` and `all`. If set to `all`, this will reset pity on all banner type. Default: `all`.',
     })
     type: BannerType | 'all' | undefined = 'all',
 
-    command: SimpleCommandMessage
+    command: SimpleCommandMessage | CommandInteraction
   ) {
     if (![...bannerType, 'all'].includes(type)) {
       return sendUsageSyntax(command)
     }
 
-    const userId = command.message.author.id
+    const isSlash = command instanceof CommandInteraction
+
+    const userId = isSlash ? command.user.id : command.message.author.id
     const resetData = {
       FOUR_STAR: 1,
       FIVE_STAR: 1,
@@ -120,12 +138,33 @@ class PityCommand {
       await pity.updateOne({ pityId: `${userId}.${type}` }, resetData)
     }
 
-    command.message.reply('Your pity has been successfully reset')
+    const message = 'Your pity has been successfully reset'
+
+    if (isSlash) {
+      return command.reply(message)
+    }
+
+    command.message.reply(message)
   }
 
-  @SimpleCommand('pity set', {
-    description: 'Set pity data.',
-  })
+  @Slash('reset', { description: 'Reset pity data' })
+  @SlashGroup('pity')
+  @Guard(rateLimitGuardFn(30))
+  slashReset(
+    @SlashChoice(...[...bannerType, 'all'])
+    @SlashOption('banner-type', {
+      required: false,
+      type: 'STRING',
+      description: 'Which banner type the pity should be reset to (Optional)',
+    })
+    type: BannerType | 'all' | undefined,
+
+    command: CommandInteraction
+  ) {
+    this.reset(type, command)
+  }
+
+  @SimpleCommand('pity set', { description: 'Set pity data' })
   @Guard(rateLimitGuardFn(30))
   async set(
     @SimpleCommandOption('banner-type', {
@@ -148,7 +187,7 @@ class PityCommand {
     })
     fiveStar: number | undefined = 1,
 
-    command: SimpleCommandMessage
+    command: SimpleCommandMessage | CommandInteraction
   ) {
     const maxPity = type === 'character' ? 90 : 80
 
@@ -163,7 +202,9 @@ class PityCommand {
       return sendUsageSyntax(command)
     }
 
-    const userId = command.message.author.id
+    const isSlash = command instanceof CommandInteraction
+
+    const userId = isSlash ? command.user.id : command.message.author.id
     const currentPity = await CharacterGacha.getPity(userId, type)
 
     // Update it
@@ -178,7 +219,44 @@ class PityCommand {
       )
       .exec()
 
-    command.message.reply('Your pity has been successfully set')
+    const message = 'Your pity has been successfully set'
+
+    if (isSlash) {
+      return command.reply(message)
+    }
+
+    command.message.reply(message)
+  }
+
+  @Slash('set', { description: 'Set pity data' })
+  @SlashGroup('pity')
+  @Guard(rateLimitGuardFn(30))
+  slashSet(
+    @SlashChoice(...bannerType)
+    @SlashOption('banner-type', {
+      required: false,
+      type: 'STRING',
+      description: 'Which banner type the pity should be set to (Optional)',
+    })
+    type: BannerType | undefined,
+
+    @SlashOption('four-star', {
+      required: false,
+      type: 'NUMBER',
+      description: 'Four star pity (Optional)',
+    })
+    fourStar: number | undefined,
+
+    @SlashOption('five-star', {
+      required: false,
+      type: 'NUMBER',
+      description: 'Five star pity (Optional)',
+    })
+    fiveStar: number | undefined,
+
+    command: CommandInteraction
+  ) {
+    this.set(type, fourStar, fiveStar, command)
   }
 }
 
