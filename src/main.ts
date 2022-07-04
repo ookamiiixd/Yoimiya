@@ -33,6 +33,9 @@ bot.once('ready', async () => {
   // Synchronize applications command permissions with Discord
   await bot.initApplicationPermissions()
 
+  // Set activity
+  bot.user?.setActivity(`in ${bot.guilds.cache.size} servers | y!help`)
+
   console.log('Bot started')
 })
 
