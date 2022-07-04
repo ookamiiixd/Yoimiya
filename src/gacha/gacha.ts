@@ -137,8 +137,8 @@ abstract class Gacha {
     )
 
     const filtered = this.banner.standard
-      ? all.filter((data) => !standardOnlyCharacters.includes(data.name))
-      : all
+      ? all
+      : all.filter((data) => !standardOnlyCharacters.includes(data.name))
 
     const random = randomPercentage()
 
