@@ -10,11 +10,15 @@ This project is inspired from [Genshin-Impact-Wish-Simulator](https://github.com
 
 ## Invite Yoimiya
 
-You can invite Yoimiya to your server [here](https://discord.com/api/oauth2/authorize?client_id=990659611885453322&permissions=3072&scope=bot).
+You can invite Yoimiya to your server [here](https://discord.com/api/oauth2/authorize?client_id=990659611885453322&permissions=3072&scope=bot%20applications.commands).
 
 ## Updates
 
 All Yoimiya's related updates will be posted on Telegram channel. Get notified [here](https://t.me/yoimiya_updates).
+
+## Usage
+
+Yoimiya's commands is available on prefixed and slash commands. To use prefixed command, type `y!<command> ...<args>`.
 
 ## Rates
 
@@ -120,6 +124,16 @@ Before you can use the bot, you have to setup things first like downloads and ge
 When developing, you may want to use the `yarn dev` command since this command will watch changes and restart the bot automatically.
 
 When starting on production, you can use the `yarn start` command. Note that you have to build the bot using the `yarn build` command first.
+
+## Contributing
+
+Issues, suggestions, etc are welcome. Please kindly open a new issue.
+
+## Donating
+
+Feeling grateful? please consider donating.
+
+Currently Yoimiya is deployed on small server located in Indonesia. By donating, we'd be able to deploy Yoimiya on better server.
 
 ## Notice
 
