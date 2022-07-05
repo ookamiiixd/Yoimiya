@@ -9,6 +9,7 @@ import 'reflect-metadata'
 import invariant from 'tiny-invariant'
 
 import { cache } from './data'
+import { setActivity } from './utils'
 
 export const bot = new Client({
   // Discord intents
@@ -34,10 +35,13 @@ bot.once('ready', async () => {
   await bot.initApplicationPermissions()
 
   // Set activity
-  bot.user?.setActivity(`in ${bot.guilds.cache.size} servers | y!help`)
+  setActivity()
 
   console.log('Bot started')
 })
+
+bot.on('guildCreate', setActivity)
+bot.on('guildDelete', setActivity)
 
 bot.on('interactionCreate', (interaction: Interaction) => {
   bot.executeInteraction(interaction)

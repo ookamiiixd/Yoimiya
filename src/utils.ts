@@ -3,6 +3,7 @@ import type { SimpleCommandMessage } from 'discordx'
 import { SimpleCommandOptionType } from 'discordx'
 
 import { EMBED_COLOR } from './commands/command'
+import { bot } from './main'
 
 export function randomPercentage() {
   return Math.floor(Math.random() * 100) + 1
@@ -68,4 +69,8 @@ export async function sendUsageSyntax(command: SimpleCommandMessage | CommandInt
   }
 
   return command.message.reply({ embeds: [embed] })
+}
+
+export function setActivity() {
+  bot.user?.setActivity(`in ${bot.guilds.cache.size} servers | y!help`)
 }
