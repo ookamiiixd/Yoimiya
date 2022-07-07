@@ -3,6 +3,7 @@ import type { SimpleCommandMessage } from 'discordx'
 import { Slash, SlashChoice, SlashOption } from 'discordx'
 import { Guard } from 'discordx'
 import { Discord, SimpleCommand, SimpleCommandOption, SimpleCommandOptionType } from 'discordx'
+import { readFileSync } from 'fs'
 
 import { characterVision, Stars } from '../data'
 import { banners } from '../data'
@@ -83,13 +84,19 @@ class GachaCommand {
       )
     )
 
-    const attachment = new MessageAttachment(image, 'result.webp')
+    const resultAttachment = new MessageAttachment(image, 'result.webp')
+    const bannerAttachment = new MessageAttachment(
+      readFileSync(`./static/images/banners/${banner.patch.toFixed(1)}/${banner.name}.webp`),
+      'banner.webp'
+    )
+
     const embed = new MessageEmbed()
 
     // Build embed
     embed
       .setColor(EMBED_COLOR)
       .setImage('attachment://result.webp')
+      .setThumbnail('attachment://banner.webp')
       .setTitle(
         `${isSlash ? command.user.username : command.message.author.username}'s Pull Result`
       )
@@ -122,7 +129,7 @@ class GachaCommand {
           (banner.type === 'weapon' ? `**Wished Weapon**: ${userPity.WISHED_WEAPON ?? ''}` : '')
       )
 
-    const message = { embeds: [embed], files: [attachment] }
+    const message = { embeds: [embed], files: [resultAttachment, bannerAttachment] }
 
     if (isSlash) {
       return command.reply(message)
