@@ -3,6 +3,7 @@
 .env
 .env.local
 package-lock.json
+generator.test.ts
 
 # folders
 build

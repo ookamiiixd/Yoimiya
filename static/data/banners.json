@@ -623,5 +623,27 @@
       "eye-of-perception",
       "favonius-greatsword"
     ]
+  },
+  {
+    "patch": 2.7,
+    "name": "oni_s-royale-2",
+    "type": "character",
+    "standard": false,
+    "character": "arataki-itto",
+    "rateup": ["kuki-shinobu", "chongyun", "gorou"]
+  },
+  {
+    "patch": 2.7,
+    "name": "epitome-invocation-30",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["redhorn-stonethresher", "memory-of-dust"],
+    "rateup": [
+      "lithic-blade",
+      "the-stringless",
+      "sacrificial-fragments",
+      "dragon_s-bane",
+      "lion_s-roar"
+    ]
   }
 ]
