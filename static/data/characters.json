@@ -469,5 +469,15 @@
       "top": 85,
       "left": 425
     }
+  },
+  {
+    "name": "kuki-shinobu",
+    "type": "electro",
+    "limited": false,
+    "rarity": "FOUR_STAR",
+    "offset": {
+      "top": 150,
+      "left": 510
+    }
   }
 ]
