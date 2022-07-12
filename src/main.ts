@@ -68,6 +68,9 @@ async function run() {
 
   // Log in with your bot token
   await bot.login(process.env.BOT_TOKEN)
+
+  // Prevent the activity from being stale
+  setInterval(setActivity, 1000 * 60 * 60)
 }
 
 run()
