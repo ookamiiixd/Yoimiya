@@ -479,5 +479,15 @@
       "top": 150,
       "left": 510
     }
+  },
+  {
+    "name": "shikanoin-heizou",
+    "type": "anemo",
+    "limited": false,
+    "rarity": "FOUR_STAR",
+    "offset": {
+      "top": 165,
+      "left": 485
+    }
   }
 ]

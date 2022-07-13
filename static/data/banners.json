@@ -645,5 +645,35 @@
       "dragon_s-bane",
       "lion_s-roar"
     ]
+  },
+  {
+    "patch": 2.8,
+    "name": "leaves-in-the-wind-2",
+    "type": "character",
+    "standard": false,
+    "character": "kaedehara-kazuha",
+    "rateup": ["shikanoin-heizou", "thoma", "ningguang"]
+  },
+  {
+    "patch": 2.8,
+    "name": "sparkling-steps-3",
+    "type": "character",
+    "standard": false,
+    "character": "klee",
+    "rateup": ["shikanoin-heizou", "thoma", "ningguang"]
+  },
+  {
+    "patch": 2.8,
+    "name": "epitome-invocation-30",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["freedom-sworn", "lost-prayer-to-the-sacred-winds"],
+    "rateup": [
+      "the-alley-flash",
+      "mitternachts-waltz",
+      "the-widsith",
+      "favonius-lance",
+      "rainslasher"
+    ]
   }
 ]
