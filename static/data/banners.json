@@ -163,7 +163,7 @@
   },
   {
     "patch": 1.4,
-    "name": "ballad-in-goblet-2",
+    "name": "ballad-in-goblets-2",
     "type": "character",
     "standard": false,
     "character": "venti",
@@ -664,7 +664,7 @@
   },
   {
     "patch": 2.8,
-    "name": "epitome-invocation-30",
+    "name": "epitome-invocation-31",
     "type": "weapon",
     "standard": false,
     "featured": ["freedom-sworn", "lost-prayer-to-the-sacred-winds"],
