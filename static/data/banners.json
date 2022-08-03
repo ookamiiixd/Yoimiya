@@ -675,5 +675,27 @@
       "favonius-lance",
       "rainslasher"
     ]
+  },
+  {
+    "patch": 2.8,
+    "name": "tapestry-of-golden-flames-2",
+    "type": "character",
+    "standard": false,
+    "character": "yoimiya",
+    "rateup": ["bennett", "xinyan", "yun-jin"]
+  },
+  {
+    "patch": 2.8,
+    "name": "epitome-invocation-32",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["thundering-pulse", "summit-shaper"],
+    "rateup": [
+      "wine-and-song",
+      "alley-hunter",
+      "the-flute",
+      "sacrificial-greatsword",
+      "dragon_s-bane"
+    ]
   }
 ]
