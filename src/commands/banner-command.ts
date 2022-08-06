@@ -10,7 +10,7 @@ import { readFileSync } from 'fs'
 
 import type { Banner } from '../data'
 import { banners } from '../data'
-import { normalizeName, sendUsageSyntax } from '../utils'
+import { capitalize, normalizeName, sendUsageSyntax } from '../utils'
 import { EMBED_COLOR } from './command'
 import { rateLimitGuardFn } from './command'
 
@@ -36,7 +36,19 @@ class BannerCommand {
         .addFields(
           list.map((banner) => ({
             name: normalizeName(banner.name),
-            value: `Banner ID: ${banner.name}\n` + `Patch Number: ${banner.patch.toFixed(1)}`,
+            value:
+              `Banner ID: ${banner.name}\n` +
+              `Patch Number: ${banner.patch.toFixed(1)}\n` +
+              `Type: ${capitalize(banner.type)}\n` +
+              `Featured ${capitalize(banner.type)}: ${
+                banner.type === 'character' && 'character' in banner
+                  ? `${normalizeName(banner.character)} (${banner.character})`
+                  : 'featured' in banner
+                  ? banner.featured
+                      .map((weapon) => `${normalizeName(weapon)} (${weapon})`)
+                      .join(', ')
+                  : ''
+              }`,
           }))
         )
     )
@@ -106,14 +118,14 @@ class BannerCommand {
         },
         {
           name: 'Type',
-          value: banner.type,
+          value: capitalize(banner.type),
         },
         {
           name: 'Standard',
           value: banner.standard ? 'Yes' : 'No',
         },
         {
-          name: `Featured ${banner.type === 'character' ? 'Character' : 'Weapon'}`,
+          name: `Featured ${capitalize(banner.type)}`,
           value:
             banner.type === 'character' && 'character' in banner
               ? `${normalizeName(banner.character)} (${banner.character})`
