@@ -1,6 +1,5 @@
 {
   "name": "yoimiya",
-  "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "main": "build/src/main.js",
@@ -10,8 +9,8 @@
     "start": "node .",
     "lint": "eslint .",
     "format": "prettier . --write",
-    "download": "ts-node ./src/downloader.ts",
-    "generate": "ts-node ./src/generator.ts"
+    "download": "node build/src/downloader.js",
+    "generate": "node build/src/generator.js"
   },
   "dependencies": {
     "@discordx/importer": "^1.1.9",
@@ -28,8 +27,7 @@
     "p-limit": "3",
     "reflect-metadata": "^0.1.13",
     "sharp": "^0.30.7",
-    "tiny-invariant": "^1.2.0",
-    "ts-node": "^10.8.2"
+    "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
