@@ -86,7 +86,7 @@ class GachaCommand {
 
     const resultAttachment = new MessageAttachment(image, 'result.webp')
     const bannerAttachment = new MessageAttachment(
-      readFileSync(`./static/images/banners/${banner.patch.toFixed(1)}/${banner.name}.webp`),
+      readFileSync(`./static/images/banners/${banner.name}.webp`),
       'banner.webp'
     )
 

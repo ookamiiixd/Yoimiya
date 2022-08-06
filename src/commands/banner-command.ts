@@ -86,7 +86,7 @@ class BannerCommand {
 
     const embed = new MessageEmbed()
     const attachment = new MessageAttachment(
-      readFileSync(`./static/images/banners/${banner.patch.toFixed(1)}/${banner.name}.webp`),
+      readFileSync(`./static/images/banners/${banner.name}.webp`),
       'banner.webp'
     )
 
