@@ -6,7 +6,7 @@
 
 Simple Genshin Impact wish simulator discord bot. This bot is useful to test out your luck before doing the actual gacha (don't blame me if your results sucks anyway) or ~~because you simply zero on primos~~ just to have some fun.
 
-This project is inspired from [Genshin-Impact-Wish-Simulator](https://github.com/AguzzTN54/Genshin-Impact-Wish-Simulator) and uses assets from there. It's a cool project too, you may want to check it out.
+This project is inspired from [Genshin-Impact-Wish-Simulator](https://github.com/AguzzTN54/Genshin-Impact-Wish-Simulator) and uses some assets from there. It's a cool project, you may want to check it out.
 
 ## Invite Yoimiya
 
@@ -114,9 +114,9 @@ Before you can use the bot, you have to setup things first like downloads and ge
 
 1. **Downloading images**.
    Execute `yarn download` to download the images.
-2. **Generating images**.
+1. **Generating images**.
    Execute `yarn generate` to process downloaded images and generate the edited one.
-3. **Setup `env` file**.
+1. **Setup `env` file**.
    First copy `.env.example` into `.env`. Then replace `BOT_TOKEN` with your Discord bot token and replace `DATABASE_URL` with your database connection url.
 
 ## Running the bot
@@ -127,7 +127,7 @@ When starting on production, you can use the `yarn start` command. Note that you
 
 ## Contributing
 
-Issues, suggestions, etc are welcome. Please kindly open a new issue.
+PRs, Issues, suggestions, etc are welcome. Please kindly open a new issue to discuss it first.
 
 ## Donating
 
