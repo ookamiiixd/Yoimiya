@@ -3,6 +3,8 @@ import type { SimpleCommandMessage } from 'discordx'
 import { SimpleCommandOptionType } from 'discordx'
 
 import { EMBED_COLOR } from './commands/command'
+import type { Character, Weapon } from './data'
+import { Stars } from './data'
 import { bot } from './main'
 
 export function randomPercentage() {
@@ -73,4 +75,10 @@ export async function sendUsageSyntax(command: SimpleCommandMessage | CommandInt
 
 export function setActivity() {
   bot.user?.setActivity(`in ${bot.guilds.cache.size} servers | y!help`)
+}
+
+type Entity = Character | Weapon
+
+export function sortGachaResults(a: Entity, b: Entity) {
+  return Stars[a.rarity] > Stars[b.rarity] ? -1 : 0
 }

@@ -11,7 +11,7 @@ import CharacterGacha from '../gacha/character-gacha'
 import type { PullMode } from '../gacha/gacha'
 import WeaponGacha from '../gacha/weapon-gacha'
 import Image from '../image/image'
-import { normalizeName, sendUsageSyntax } from '../utils'
+import { normalizeName, sendUsageSyntax, sortGachaResults } from '../utils'
 import { EMBED_COLOR } from './command'
 import { rateLimitGuardFn } from './command'
 
@@ -76,12 +76,14 @@ class GachaCommand {
     const meta = gacha.metadata()
     // Build image from the gacha result
     const image = await Image.combine(
-      result.map(
-        (res) =>
-          `./static/images/${characterVision.includes(res.type) ? 'characters' : 'weapons'}/${
-            res.name
-          }.webp`
-      )
+      Array.from(result)
+        .sort(sortGachaResults)
+        .map(
+          (res) =>
+            `./static/images/${characterVision.includes(res.type) ? 'characters' : 'weapons'}/${
+              res.name
+            }.webp`
+        )
     )
 
     const resultAttachment = new MessageAttachment(image, 'result.webp')
