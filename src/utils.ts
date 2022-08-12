@@ -4,6 +4,7 @@ import { SimpleCommandOptionType } from 'discordx'
 
 import { EMBED_COLOR } from './commands/command'
 import type { Character, Weapon } from './data'
+import { characterVision } from './data'
 import { Stars } from './data'
 import { bot } from './main'
 
@@ -79,6 +80,18 @@ export function setActivity() {
 
 type Entity = Character | Weapon
 
-export function sortGachaResults(a: Entity, b: Entity) {
-  return Stars[a.rarity] > Stars[b.rarity] ? -1 : 0
+export function sortGachaResults(results: Entity[]) {
+  // Group duplicated characters
+  const grouped = results.reduce((a, b) => {
+    const isWeapon = !characterVision.includes(b.type)
+    const prev = a.get(b.name) ?? []
+
+    return a.set(`${b.name}${isWeapon ? Math.random() : ''}`, [...(isWeapon ? [] : prev), b])
+  }, new Map<string, Entity[]>())
+
+  return Array.from(grouped.values())
+    .sort((a, b) => b.length - a.length) // Sort by duplicate
+    .flat(1) // Flatten array
+    .sort((a, b) => (!characterVision.includes(b.type) ? -1 : 0)) // Sort by type
+    .sort((a, b) => Stars[b.rarity] - Stars[a.rarity]) // Sort by rarity
 }

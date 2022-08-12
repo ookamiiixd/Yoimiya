@@ -33,7 +33,6 @@ class WeaponGacha extends Gacha {
       (random <= 75 && isGotWished)
     ) {
       this.currentPity.FIVE_STAR = 1
-      this.currentPity.WISHED_WEAPON = ''
       // Lost 50:50
     } else if (RATE_ON_COUNT === 1 && !isGotWished) {
       this.currentPity.FIVE_STAR = CURRENT_PULLS + (this.HARD_PITY * 2 - CURRENT_PULLS)

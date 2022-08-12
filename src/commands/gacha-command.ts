@@ -76,14 +76,12 @@ class GachaCommand {
     const meta = gacha.metadata()
     // Build image from the gacha result
     const image = await Image.combine(
-      Array.from(result)
-        .sort(sortGachaResults)
-        .map(
-          (res) =>
-            `./static/images/${characterVision.includes(res.type) ? 'characters' : 'weapons'}/${
-              res.name
-            }.webp`
-        )
+      sortGachaResults(Array.from(result)).map(
+        (res) =>
+          `./static/images/${characterVision.includes(res.type) ? 'characters' : 'weapons'}/${
+            res.name
+          }.webp`
+      )
     )
 
     const resultAttachment = new MessageAttachment(image, 'result.webp')
