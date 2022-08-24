@@ -123,7 +123,7 @@ Before you can use the bot, you have to setup things first like downloads and ge
 
 When developing, you may want to use the `yarn dev` command since this command will watch changes and restart the bot automatically.
 
-When starting on production, you can use the `yarn start` command. Note that you have to build the bot using the `yarn build` command first.
+When running on production, you can use the `yarn start` command. Note that you have to build the bot using the `yarn build` command first.
 
 ## Contributing
 
