@@ -26,3 +26,5 @@ To deliver the best experience to both Discord and our players, we collect the f
 - **User ID**: The unique identifier that belongs to your Discord account. This allows us to assign game and verification data to a particular Discord user account. User IDs are accessible by any Discord user.
 
 We do not sell or otherwise share any collected data with any third parties.
+
+If you have any privacy-related requests or concerns, such as a data removal request, please reach me out by sending an email to ookamiiixd@gmail.com or send a DM via twitter [@ookamiiixd](https://twitter.com/ookamiiixd).
