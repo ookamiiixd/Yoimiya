@@ -174,6 +174,12 @@
     "rarity": "FIVE_STAR"
   },
   {
+    "name": "hunter_s-path",
+    "type": "bow",
+    "limited": true,
+    "rarity": "FIVE_STAR"
+  },
+  {
     "name": "akuoumaru",
     "type": "claymore",
     "limited": true,

@@ -10,7 +10,7 @@ export enum Stars {
 
 export type Rarity = 'FIVE_STAR' | 'FOUR_STAR' | 'THREE_STAR'
 
-export const characterVision = ['anemo', 'cryo', 'hydro', 'pyro', 'electro', 'geo']
+export const characterVision = ['anemo', 'cryo', 'hydro', 'pyro', 'electro', 'geo', 'dendro']
 
 export const weaponType = ['sword', 'claymore', 'bow', 'catalyst', 'polearm']
 

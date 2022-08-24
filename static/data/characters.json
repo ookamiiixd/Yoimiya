@@ -489,5 +489,25 @@
       "top": 165,
       "left": 485
     }
+  },
+  {
+    "name": "tighnari",
+    "type": "dendro",
+    "limited": true,
+    "rarity": "FIVE_STAR",
+    "offset": {
+      "top": 100,
+      "left": 450
+    }
+  },
+  {
+    "name": "collei",
+    "type": "dendro",
+    "limited": false,
+    "rarity": "FOUR_STAR",
+    "offset": {
+      "top": 160,
+      "left": 330
+    }
   }
 ]

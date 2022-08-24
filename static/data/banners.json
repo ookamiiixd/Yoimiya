@@ -697,5 +697,29 @@
       "sacrificial-greatsword",
       "dragon_s-bane"
     ]
+  },
+  {
+    "patch": 3.0,
+    "name": "viridescent-vigil-1",
+    "type": "character",
+    "standard": false,
+    "character": "tighnari",
+    "rateup": ["collei", "fischl", "diona"]
+  },
+  {
+    "patch": 3.0,
+    "name": "gentry-of-hermitage-4",
+    "type": "character",
+    "standard": false,
+    "character": "zhongli",
+    "rateup": ["collei", "fischl", "diona"]
+  },
+  {
+    "patch": 3.0,
+    "name": "epitome-invocation-33",
+    "type": "weapon",
+    "standard": false,
+    "featured": ["hunter_s-path", "vortex-vanquisher"],
+    "rateup": ["favonius-sword", "the-bell", "favonius-lance", "favonius-codex", "the-stringless"]
   }
 ]
